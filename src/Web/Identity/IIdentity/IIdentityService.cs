@@ -1,6 +1,6 @@
 ﻿using Shared.DTOs.Auth;
 using Shared.DTOs.User;
-using Web.Commom;
+using Web.Commom.Response;
 
 namespace Web.Identity.IIdentity
 {

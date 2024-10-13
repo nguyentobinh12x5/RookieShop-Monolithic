@@ -1,5 +1,6 @@
 ﻿using Web;
 using Web.Data;
+using Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+builder.AddAppAuthetication();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,7 +27,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

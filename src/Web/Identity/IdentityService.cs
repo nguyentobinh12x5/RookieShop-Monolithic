@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Shared.DTOs.Auth;
 using Shared.DTOs.User;
-using Web.Commom;
-using Web.Constants;
+using Web.Commom.Constants;
+using Web.Commom.Response;
 using Web.Extensions;
 using Web.Identity.IIdentity;
 

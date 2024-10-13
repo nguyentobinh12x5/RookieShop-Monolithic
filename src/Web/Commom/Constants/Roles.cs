@@ -1,4 +1,4 @@
-﻿namespace Web.Constants
+﻿namespace Web.Commom.Constants
 {
     public abstract class Roles
     {

@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Web.Commom
+﻿namespace Web.Commom.Response
 {
     public class PaginatedList<T>
     {

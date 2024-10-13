@@ -1,4 +1,4 @@
-﻿namespace Web.Commom
+﻿namespace Web.Commom.Request
 {
     public record GetWithPaginationQuery
     {

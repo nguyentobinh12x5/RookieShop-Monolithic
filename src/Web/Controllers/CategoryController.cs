@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.DTOs.Category;
-using Web.Commom;
+using Web.Commom.Request;
 using Web.Service.IService;
 
 namespace Web.Controllers
@@ -35,7 +35,7 @@ namespace Web.Controllers
 
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(CategoryDto request, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateCategory([FromForm] CreateCategoryDto request, CancellationToken cancellationToken)
         {
             var category = await _categoryService.CreateCategory(request, cancellationToken);
 

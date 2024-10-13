@@ -1,7 +1,8 @@
-﻿using Web.Commom;
+﻿using Shared.DTOs.Category;
+using Web.Commom.Request;
+using Web.Commom.Response;
 using Web.Models.Model;
 using Web.Service.IService;
-using Shared.DTOs.Category;
 
 namespace Web.Service
 {
@@ -10,10 +11,13 @@ namespace Web.Service
         private readonly IApplicationDbContext _context;
 
         private readonly IMapper _mapper;
-        public CategoryService(IApplicationDbContext context, IMapper mapper)
+
+        private readonly CloudinaryService _cloudinaryService;
+        public CategoryService(IApplicationDbContext context, IMapper mapper, CloudinaryService cloudinaryService)
         {
             _context = context;
             _mapper = mapper;
+            _cloudinaryService = cloudinaryService;
         }
 
         public async Task<PaginatedList<CategoryDto>> GetAllCategories(GetWithPaginationQuery query, CancellationToken cancellationToken)
@@ -33,9 +37,25 @@ namespace Web.Service
             return _mapper.Map<CategoryDto>(category);
         }
 
-        public async Task<CategoryDto> CreateCategory(CategoryDto categoryDto, CancellationToken cancellationToken)
+        public async Task<CategoryDto> CreateCategory(CreateCategoryDto request, CancellationToken cancellationToken)
         {
-            var category = _mapper.Map<Category>(categoryDto);
+            string imageUrl = null;
+
+            if (request.Image != null && request.Image.Length > 0)
+            {
+                var uploadResult = await _cloudinaryService.UploadImageAsync(request.Image.OpenReadStream(), request.Image.FileName);
+                if (uploadResult.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    imageUrl = uploadResult.SecureUrl.ToString();
+                }
+            }
+
+            var category = new Category
+            {
+                Name = request.Name,
+                Description = request.Description,
+                ImageUrl = imageUrl,
+            };
 
             _context.Categories.Add(category);
 
