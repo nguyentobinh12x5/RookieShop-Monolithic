@@ -4,10 +4,10 @@ namespace Shared.DTOs.Category
 {
     public record CreateCategoryDto
     {
-        public string Name { get; set; }
+        public string Name { get; init; } = null!;
 
-        public string? Description { get; set; }
+        public string? Description { get; init; }
 
-        public IFormFile? Image { get; set; }
+        public IFormFile? Image { get; init; }
     }
 }

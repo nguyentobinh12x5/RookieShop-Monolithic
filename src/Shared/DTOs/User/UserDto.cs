@@ -2,18 +2,18 @@
 {
     public class UserDto
     {
-        public string Id { get; set; } = string.Empty;
+        public string Id { get; init; } = null!;
 
-        public string Email { get; set; } = string.Empty;
+        public string Email { get; init; } = null!;
 
-        public string UserName { get; set; } = string.Empty;
+        public string UserName { get; init; } = null!;
 
-        public string FirstName { get; set; } = string.Empty;
+        public string FirstName { get; init; } = null!;
 
-        public string LastName { get; set; } = string.Empty;
+        public string LastName { get; init; } = null!;
 
-        public string PhoneNumber { get; set; } = string.Empty;
+        public string PhoneNumber { get; init; } = null!;
 
-        public string Address { get; set; } = string.Empty;
+        public string Address { get; init; } = null!;
     }
 }

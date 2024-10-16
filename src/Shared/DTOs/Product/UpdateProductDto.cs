@@ -4,17 +4,17 @@ namespace Shared.DTOs.Product
 {
     public record UpdateProductDto
     {
-        public string Name { get; set; } = null!;
-        public string? Description { get; set; }
+        public string Name { get; init; } = null!;
+        public string? Description { get; init; }
 
         [Column(TypeName = "decimal(18,2)")]
-        public decimal Price { get; set; }
+        public decimal Price { get; init; }
 
         [Column(TypeName = "decimal(18,2)")]
-        public decimal PriceDiscount { get; set; }
-        public int Stock { get; set; }
+        public decimal PriceDiscount { get; init; }
+        public int Stock { get; init; }
 
-        public int CategoryId { get; set; }
+        public int CategoryId { get; init; }
 
     }
 }
