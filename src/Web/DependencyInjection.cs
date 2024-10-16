@@ -17,6 +17,7 @@ namespace Web
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<CloudinaryService>();
 
             return services;

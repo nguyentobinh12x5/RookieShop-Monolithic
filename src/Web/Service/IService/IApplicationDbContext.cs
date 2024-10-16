@@ -6,6 +6,9 @@ namespace Web.Service.IService
     {
         DbSet<Category> Categories { get; }
 
+        DbSet<Product> Products { get; }
+
+        DbSet<ProductImage> ProductImages { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

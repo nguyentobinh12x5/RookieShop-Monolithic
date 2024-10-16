@@ -7,6 +7,7 @@ namespace Web.Service.IService
     public interface ICategoryService
     {
         Task<PaginatedList<CategoryDto>> GetAllCategories(GetWithPaginationQuery query, CancellationToken cancellationToken);
+
         Task<CategoryDto> GetCategoryById(int CategoryId, CancellationToken cancellationToken);
 
         Task<CategoryDto> CreateCategory(CreateCategoryDto request, CancellationToken cancellationToken);

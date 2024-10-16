@@ -9,5 +9,7 @@ namespace Web.Models.Model
         public string? Description { get; set; }
 
         public string? ImageUrl { get; set; }
+
+        public IList<Product> Products { get; private set; } = new List<Product>();
     }
 }

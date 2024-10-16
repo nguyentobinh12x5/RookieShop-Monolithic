@@ -1,6 +1,6 @@
 ﻿namespace Shared.DTOs.Category
 {
-    public class UpdateCategoryDto
+    public record UpdateCategoryDto
     {
         public string Name { get; set; }
 

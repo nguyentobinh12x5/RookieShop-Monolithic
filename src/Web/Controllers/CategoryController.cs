@@ -42,7 +42,7 @@ namespace Web.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory(int id, CategoryDto request, CancellationToken cancellationToken)
+        public async Task<IActionResult> UpdateCategory(int id, UpdateCategoryDto request, CancellationToken cancellationToken)
         {
             var category = await _categoryService.UpdateCategory(id, request, cancellationToken);
 

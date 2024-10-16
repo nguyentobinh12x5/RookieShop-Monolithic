@@ -1,6 +1,6 @@
 ﻿namespace Shared.DTOs.Category
 {
-    public class CategoryDto
+    public record CategoryDto
     {
         public int Id { get; set; }
 

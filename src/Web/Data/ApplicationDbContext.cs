@@ -10,5 +10,7 @@ namespace Web.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<Category> Categories { get; set; } = null!;
+        public DbSet<Product> Products { get; set; } = null!;
+        public DbSet<ProductImage> ProductImages { get; set; } = null!;
     }
 }
