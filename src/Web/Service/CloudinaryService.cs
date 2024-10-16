@@ -52,5 +52,12 @@ namespace Web.Service
             return result;
         }
 
+        public async Task<bool> DeleteImageAsync(string publicId)
+        {
+            var deleteParams = new DeletionParams(publicId);
+            var result = await _cloudinary.DestroyAsync(deleteParams);
+            return result.Result == "ok";
+        }
+
     }
 }

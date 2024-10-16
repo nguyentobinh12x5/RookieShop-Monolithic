@@ -2,7 +2,7 @@
 {
     public class BaseAuditableModel : BaseModel
     {
-        public DateTimeOffset Created { get; set; }
+        public DateTimeOffset Created { get; set; } = DateTimeOffset.UtcNow;
 
         public string? CreatedBy { get; set; }
 

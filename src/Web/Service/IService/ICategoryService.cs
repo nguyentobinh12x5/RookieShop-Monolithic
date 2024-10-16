@@ -11,7 +11,7 @@ namespace Web.Service.IService
 
         Task<CategoryDto> CreateCategory(CreateCategoryDto request, CancellationToken cancellationToken);
 
-        Task<CategoryDto> UpdateCategory(int CategoryId, CategoryDto CategoryDto, CancellationToken cancellationToken);
+        Task<CategoryDto> UpdateCategory(int CategoryId, UpdateCategoryDto CategoryDto, CancellationToken cancellationToken);
 
         Task<bool> DeleteCategory(int CategoryId, CancellationToken cancellationToken);
     }

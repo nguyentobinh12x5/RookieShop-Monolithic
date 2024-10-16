@@ -64,7 +64,7 @@ namespace Web.Service
             return _mapper.Map<CategoryDto>(category);
         }
 
-        public async Task<CategoryDto> UpdateCategory(int categoryId, CategoryDto categoryDto, CancellationToken cancellationToken)
+        public async Task<CategoryDto> UpdateCategory(int categoryId, UpdateCategoryDto categoryDto, CancellationToken cancellationToken)
         {
             var category = await _context.Categories.FindAsync(categoryId);
 
